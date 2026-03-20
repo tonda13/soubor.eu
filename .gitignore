@@ -1,5 +1,6 @@
 /vendor/
 /files/*
+!/files/.gitkeep
 /data/password.hash
 /uploads/*
 !/uploads/.gitkeep
