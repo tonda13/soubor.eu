@@ -1,0 +1,355 @@
+/* =========================================================
+   EVEREST.CSS
+   A simple foundation for readable websites.
+   Inspired by bettermotherfuckingwebsite.com —
+   a page doesn't need to be cluttered to be good.
+
+   Usage order in HTML:
+     1. <link rel="stylesheet" href="everest.css">
+     2. Project-specific styles
+   ========================================================= */
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* { margin: 0; padding: 0; }
+
+html {
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select { font: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    /* Palette — light theme */
+    --bg:          #fafaf8;
+    --text:        #333;
+    --text-muted:  #666;
+    --accent:      #1a6bc4;
+    --accent-alt:  #c0392b;
+    --border:      #ddd;
+    --code-bg:     #f0f0ec;
+
+    /* Dark theme — applied automatically via system preference */
+    --bg-dark:          #111;
+    --text-dark:        #ddd;
+    --text-muted-dark:  #888;
+    --accent-dark:      #5b9bd5;
+    --border-dark:      #333;
+    --code-bg-dark:     #1e1e1e;
+
+    /* Typography */
+    --font-body:    system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-mono:    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+    /* Fluid type scale */
+    --fs-sm:   clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+    --fs-base: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+    --fs-lg:   clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+    --fs-xl:   clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+    --fs-2xl:  clamp(1.9rem, 1.4rem + 2.5vw, 2.6rem);
+
+    /* Layout */
+    --max-width:  880px;
+    --pad-inline: clamp(1rem, 5vw, 2rem);
+    --lh:         1.7;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    line-height: var(--lh);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    /* This is the entire magic of bettermotherfuckingwebsite: */
+    max-width: var(--max-width);
+    margin: 3rem auto;
+    padding: 0 var(--pad-inline);
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+h4, h5, h6 { font-size: var(--fs-base); font-family: var(--font-body); }
+
+/* First heading on the page — no top margin */
+h1:first-child,
+h2:first-child { margin-top: 0; }
+
+p { margin-bottom: 1.25rem; }
+
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: 700; }
+em     { font-style: italic; }
+
+small {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+}
+
+a:hover {
+    color: var(--accent-alt);
+}
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+ul { list-style: disc; }
+ol { list-style: decimal; }
+
+li { margin-bottom: 0.3rem; }
+
+/* =========================================================
+   CODE
+   ========================================================= */
+
+code, kbd, samp {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+    line-height: 1.55;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* =========================================================
+   HORIZONTAL RULE, BLOCKQUOTE
+   ========================================================= */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+}
+
+blockquote {
+    border-left: 4px solid var(--border);
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+blockquote p { margin-bottom: 0; }
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+figcaption {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.25rem;
+    font-size: var(--fs-sm);
+}
+
+th, td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+th { font-weight: 700; }
+
+tbody tr:hover td { background: rgba(0, 0, 0, 0.03); }
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--fs-base);
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    margin-bottom: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+textarea { resize: vertical; min-height: 120px; }
+
+button,
+input[type="submit"],
+input[type="button"] {
+    display: inline-block;
+    padding: 0.55rem 1.4rem;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: color-mix(in srgb, var(--accent) 80%, #000);
+    transform: translateY(-1px);
+}
+
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   FOCUS (accessibility)
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* =========================================================
+   DARK THEME (prefers-color-scheme)
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg:         var(--bg-dark);
+        --text:       var(--text-dark);
+        --text-muted: var(--text-muted-dark);
+        --accent:     var(--accent-dark);
+        --border:     var(--border-dark);
+        --code-bg:    var(--code-bg-dark);
+    }
+
+    tbody tr:hover td { background: rgba(255, 255, 255, 0.04); }
+}
+
+/* =========================================================
+   MOBILE  (≤ 480px)
+   ========================================================= */
+
+@media (max-width: 480px) {
+    body { margin: 1.5rem auto; }
+
+    pre { padding: 0.75rem 1rem; }
+}

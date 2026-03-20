@@ -1,0 +1,116 @@
+/* =========================================================
+   ACCENT GRADIENT — single source of truth
+   ========================================================= */
+
+:root {
+    --accent-gradient-from: var(--accent);   /* #1a6bc4 */
+    --accent-gradient-to:   #0d3d72;
+    --accent-gradient: linear-gradient(135deg, var(--accent-gradient-from) 0%, var(--accent-gradient-to) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent-gradient-from: #1a4a80;
+        --accent-gradient-to:   #0a2444;
+    }
+}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+/* Override everest.css body layout — full-bleed header */
+body {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+    background: var(--accent-gradient);
+    color: #fff;
+    padding: 3.5rem 0;
+}
+
+.page-header h1 {
+    color: #fff;
+    font-size: var(--fs-2xl);
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.page-content {
+    max-width: var(--max-width);
+    margin: 3rem auto;
+    padding: 0 var(--pad-inline);
+}
+
+@media (max-width: 480px) {
+    .page-header { padding: 2rem var(--pad-inline); }
+    .page-content { margin: 1.5rem auto; }
+}
+
+/* =========================================================
+   CODE BLOCKS
+   ========================================================= */
+
+.page-content pre {
+    background: transparent;
+    padding: 0;
+}
+
+.page-content pre code.hljs {
+    border-radius: 6px;
+}
+
+/* =========================================================
+   BLOCKQUOTE
+   ========================================================= */
+
+.page-content blockquote {
+    border-left: 4px solid var(--accent-gradient-from);
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: var(--fs-sm);
+}
+
+.page-content table thead tr {
+    background: var(--accent-gradient);
+    color: #fff;
+}
+
+.page-content table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border: none;
+}
+
+.page-content table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-content table tbody tr:nth-child(odd)  { background: var(--bg); }
+.page-content table tbody tr:nth-child(even) { background: var(--code-bg); }
+
+.page-content table tbody tr:hover {
+    background: color-mix(in srgb, var(--accent-gradient-from) 10%, transparent);
+}
