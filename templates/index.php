@@ -16,6 +16,7 @@
     <main class="page-content">
         <p>Jednoduchá platforma pro sdílení samostatných článků a dokumentů. Každý článek je uložen jako Markdown soubor a zobrazí se na vlastní URL — bez databáze, bez přihlašování, bez zbytečností.</p>
         <p>Obsah se píše v Markdownu s podporou <a href="https://github.github.com/gfm/" target="_blank">GitHub Flavored Markdown</a> — tabulky, přeškrtnutí, bloky kódu se zvýrazněním syntaxe.</p>
+
         <table>
             <thead>
                 <tr>
