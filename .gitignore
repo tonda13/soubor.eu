@@ -2,3 +2,4 @@
 /data/password.hash
 /uploads/*
 !/uploads/.gitkeep
+.env

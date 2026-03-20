@@ -2,7 +2,7 @@
 
 echo "Install composer and NPM packages"
 composer install
-npm install
+#npm install
 
 echo "Starting Apache"
 apachectl -D FOREGROUND
