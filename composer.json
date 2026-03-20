@@ -1,0 +1,27 @@
+{
+    "name": "tonda13/soubor.eu",
+    "description": "Basic blog system based on Markdown files",
+    "type": "project",
+    "require": {
+        "slim/slim": "^4.15",
+        "php-di/php-di": "^7.1",
+        "slim/php-view": "^3.4",
+        "slim/psr7": "^1.8",
+        "league/commonmark": "^2.8"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Souboreu\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Antonin Neumann",
+            "email": "antonin.neumann@tonda.dev"
+        }
+    ]
+}
