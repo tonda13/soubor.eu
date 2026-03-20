@@ -59,6 +59,50 @@ body {
 }
 
 /* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.breadcrumb {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.6rem var(--pad-inline);
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb a { color: var(--accent-gradient-from); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .sep { color: var(--border); }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.page-footer {
+    max-width: var(--max-width);
+    margin: 2rem auto 3rem;
+    padding: 1.5rem var(--pad-inline) 0;
+    border-top: 1px solid var(--border);
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-footer .footer-date {
+    margin-left: auto;
+}
+
+.page-footer a { color: var(--accent-gradient-from); text-decoration: none; }
+.page-footer a:hover { text-decoration: underline; }
+
+/* =========================================================
    CODE BLOCKS
    ========================================================= */
 
