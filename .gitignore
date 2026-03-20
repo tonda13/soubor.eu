@@ -1,1 +1,4 @@
 /vendor/
+/data/password.hash
+/uploads/*
+!/uploads/.gitkeep

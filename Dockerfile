@@ -8,9 +8,15 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && \
 # install composer
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
+# PHP konfigurace
+COPY etc/php-uploads.ini /usr/local/etc/php/conf.d/uploads.ini
+
 # bash aliases for all users
 COPY etc/bash.aliases /etc/bash.aliases
 RUN echo '\n. /etc/bash.aliases' >> /etc/bash.bashrc
+
+# align www-data UID/GID with host user (1000) so mounted volumes are writable
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 # allow www-data to use git in mounted volume and have writable composer cache
 RUN git config --system --add safe.directory /var/www/html && \
